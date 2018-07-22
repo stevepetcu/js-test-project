@@ -81,6 +81,30 @@ describe('Creating a rover instance', function () {
             new Rover(initialLocationFake, 'N', 'KLM', plateauMapFake);
         }).to.throw('Invalid rover commands (must use M, R, L to specify commands).');
     });
+});
+
+describe('Moving the rover', function () {
+    let rover, initialLocationFake, plateauMapFake;
+
+    before(function () {
+        initialLocationFake = {};
+        initialLocationFake.xCoordinate = function () {
+            return 3;
+        };
+        initialLocationFake.yCoordinate = function () {
+            return 7;
+        };
+
+        plateauMapFake = {};
+        plateauMapFake.topRightX = function () {
+            return 50;
+        };
+        plateauMapFake.topRightY = function () {
+            return 100;
+        };
+
+        rover = new Rover(initialLocationFake, 'N', 'MMMRMM', plateauMapFake);
+    });
 
     it('should advance 1 block N when an M command is executed, given the orientation is N and the plateau\'s bounds allow it', function () {
         // Given
