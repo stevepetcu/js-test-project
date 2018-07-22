@@ -11,8 +11,7 @@ const Location = require('./location').default;
 const Plateau = require('./plateau').default;
 const Rover = require('./rover').default;
 
-
-let plateauInputValidator = new RegExp('^\\d+\\s\\d+$');
+const plateauInputValidator = new RegExp('^\\d+\\s\\d+$');
 let topRightPlateauCornerCoordinates = readline.question('Please enter the plateau\'s top right coordinates: ');
 
 if (!plateauInputValidator.test(topRightPlateauCornerCoordinates)) {
