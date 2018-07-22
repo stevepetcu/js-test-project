@@ -20,11 +20,11 @@ describe('Creating a plateau instance', function () {
         plateau = new Plateau(locationFake);
     });
 
-    it('should return its X coordinate when xCoordinate() called, given constructor arguments are >= 0', function () {
+    it('should return its X coordinate when xCoordinate() called, given constructed with a location', function () {
         plateau.topRightX().should.equal(50);
     });
 
-    it('should return its Y coordinate when yCoordinate() called, given constructor arguments are >= 0', function () {
+    it('should return its Y coordinate when yCoordinate() called, given constructed with a location', function () {
         plateau.topRightY().should.equal(10);
     });
 });
